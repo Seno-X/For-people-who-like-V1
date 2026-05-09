@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Mitr:wght@300;400;500&display=swap');
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-pink: #ffeff3;
+    --main-pink: #ff8fa3;
+    --dark-pink: #d04670;
+    --soft-pink: #fce4ec;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-pink);
+    font-family: 'Itim', sans-serif;
+    overflow: hidden;
+}
+
+.main-card {
+    background: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    z-index: 10;
+    border: 3px solid #ffdde5;
+}
+
+.gif-overlay-wrapper {
+    width: 150px;
+    margin: 0 auto 20px;
+    pointer-events: none;
+}
+
+h1 { color: var(--dark-pink); font-size: 2rem; margin-bottom: 30px; }
+
+.button-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 150px;
+}
+
+.pill-button {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-family: 'Mitr', sans-serif;
+}
+
+#yesBtn { background-color: var(--main-pink); color: white; z-index: 20; }
+#noBtn { background-color: var(--soft-pink); color: #e085a0; }
+
+/* Modal Settings */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 192, 203, 0.8);
+    backdrop-filter: blur(12px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 50px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px; /* ขยายความกว้าง Modal นิดหน่อย */
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+    animation: popUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ขยายสติกเกอร์แมวให้ใหญ่ขึ้น */
+.gif-success-container {
+    width: 220px; /* เพิ่มขนาดจากเดิม 130px */
+    margin: 0 auto 20px;
+    pointer-events: none;
+}
+
+.modal-content h2 { color: #ff4757; font-size: 2.2rem; margin: 10px 0; }
+.modal-content p { color: #888; font-size: 1.3rem; }
